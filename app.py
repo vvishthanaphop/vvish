@@ -28,6 +28,11 @@ def bot():
     replyStack.append(msg_in_string)
     reply(replyToken, replyStack[:5])
     
+    responses_dict = {“สวัสดี”: “สบายดีไหม?”}
+    text = msg_in_json[“events”][0][‘message’][‘text’]
+    
+  replyStack.append(responses_dict[text])
+  
     return 'OK',200
  
 def reply(replyToken, textList):
